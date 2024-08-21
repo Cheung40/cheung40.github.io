@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ndjson on Seven Theme</title>
+    <link>https://cheung40.github.io/en/tags/ndjson/</link>
+    <description>Recent content in Ndjson on Seven Theme</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 25 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cheung40.github.io/en/tags/ndjson/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>essays Uploading Data to Algolia Search</title>
+      <link>https://cheung40.github.io/en/essays/upload-data-to-algolia/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/en/essays/upload-data-to-algolia/</guid>
+      <description>The theme recommends using the Algolia CLI to upload data to Algolia.&#xA;The data upload requires using the algolia objects command, which expects the uploaded file to be in ndjson format. By default, Hugo doesn&amp;rsquo;t generate ndjson format data files. However, this theme supports generating ndjson format data files by default, making it convenient to use the algolia objects command to upload data to Algolia.&#xA;First, make sure you have installed the Algolia CLI.</description>
+    </item>
+    <item>
+      <title>Uploading Data to Algolia Search</title>
+      <link>https://cheung40.github.io/en/docs/upload-data-to-algolia/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/en/docs/upload-data-to-algolia/</guid>
+      <description>The theme recommends using the Algolia CLI to upload data to Algolia.&#xA;The data upload requires using the algolia objects command, which expects the uploaded file to be in ndjson format. By default, Hugo doesn&amp;rsquo;t generate ndjson format data files. However, this theme supports generating ndjson format data files by default, making it convenient to use the algolia objects command to upload data to Algolia.&#xA;First, make sure you have installed the Algolia CLI.</description>
+    </item>
+  </channel>
+</rss>

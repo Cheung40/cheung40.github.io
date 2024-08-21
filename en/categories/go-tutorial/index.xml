@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go Tutorial on Seven Theme</title>
+    <link>https://cheung40.github.io/en/categories/go-tutorial/</link>
+    <description>Recent content in Go Tutorial on Seven Theme</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Jun 2023 22:02:42 +0800</lastBuildDate>
+    <atom:link href="https://cheung40.github.io/en/categories/go-tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Started With Multi Module Workspaces</title>
+      <link>https://cheung40.github.io/en/posts/2023-06-28-getting-started-with-multi-module-workspaces/</link>
+      <pubDate>Wed, 28 Jun 2023 22:02:42 +0800</pubDate>
+      <guid>https://cheung40.github.io/en/posts/2023-06-28-getting-started-with-multi-module-workspaces/</guid>
+      <description>&lt;p&gt;This tutorial introduces the basics of multi-module workspaces in Go. With multi-module workspaces, you can tell the Go command that you’re writing code in multiple modules at the same time and easily build and run code in those modules.&lt;/p&gt;&#xA;&lt;p&gt;In this tutorial, you’ll create two modules in a shared multi-module workspace, make changes across those modules, and see the results of those changes in a build.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: For other tutorials, see &#xA;&lt;a&#xA;  href=&#34;https://go.dev/doc/tutorial/&#34;&#xA;  &#xA;    target=&#34;_blank&#34;&#xA;  &#xA;  &gt;Tutorials&lt;/a&#xA;&gt;&#xA;.&lt;/p&gt;&#xA;&lt;h2 class=&#34;group head-tag&#34; id=&#34;prerequisites&#34;&gt;Prerequisites&lt;a data-title-of-head class=&#34;group-hover:after:content-[&#39;__#&#39;] no-underline hover:text-[--hs-text-color-hover]&#34; href=&#34;#prerequisites&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;An installation of Go 1.18 or later.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;A tool to edit your code.&lt;/strong&gt; Any text editor you have will work fine.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;A command terminal.&lt;/strong&gt; Go works well using any terminal on Linux and Mac, and on PowerShell or cmd in Windows.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This tutorial requires go1.18 or later. Make sure you’ve installed Go at Go 1.18 or later using the links at &#xA;&lt;a&#xA;  href=&#34;https://go.dev/dl&#34;&#xA;  &#xA;    target=&#34;_blank&#34;&#xA;  &#xA;  &gt;go.dev/dl&lt;/a&#xA;&gt;&#xA;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

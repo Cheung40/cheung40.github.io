@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Seven on Seven 主题</title>
+    <link>https://cheung40.github.io/tags/seven/</link>
+    <description>Recent content in Seven on Seven 主题</description>
+    <generator>Hugo</generator>
+    <language>zh-hans</language>
+    <lastBuildDate>Thu, 25 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cheung40.github.io/tags/seven/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>快速体验主题</title>
+      <link>https://cheung40.github.io/docs/quick-start/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/docs/quick-start/</guid>
+      <description>这篇文章介绍如何快速体验 seven 主题。 前提条件 下载 Hugo , 版本要求 &amp;gt;= 0.124.0 下载 Go 下载 Node.js 克隆主题仓库git clone https://github.com/mrhelloboy/seven.git 下载依赖及初始化cd seven/exampleSite hugo mod npm pack npm install 启动服务hu</description>
+    </item>
+    <item>
+      <title>essays快速体验主题</title>
+      <link>https://cheung40.github.io/essays/quick-start/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/essays/quick-start/</guid>
+      <description>这篇文章介绍如何快速体验 seven 主题。 前提条件 下载 Hugo , 版本要求 &amp;gt;= 0.124.0 下载 Go 下载 Node.js 克隆主题仓库git clone https://github.com/mrhelloboy/seven.git 下载依赖及初始化cd seven/exampleSite hugo mod npm pack npm install 启动服务hu</description>
+    </item>
+  </channel>
+</rss>

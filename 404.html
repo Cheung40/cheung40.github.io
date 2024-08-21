@@ -1,0 +1,1211 @@
+<!doctype html>
+<html lang="zh-hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      id="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>
+      
+            page |
+            Seven 主题
+          
+    </title><meta
+  name="application-name"
+  content="Seven Theme" />
+<meta
+  name="apple-mobile-web-app-title"
+  content="Seven Theme" />
+
+
+  <meta name="title" content="404 Page not found" />
+
+
+
+  <meta name="description" content="一款简洁、漂亮的 HUGO 博客主题" />
+<meta name="theme-color" content="#ffffff" /><link rel="icon" href="/favicon.svg" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffffff" />
+
+
+
+
+  
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/instantsearch.css@8.0.0/themes/reset-min.css"
+    integrity="sha256-2AeJLzExpZvqLUxMfcs+4DWcMwNfpnjUeAAvEtPr0wU="
+    crossorigin="anonymous" />
+
+  
+    
+      
+        <link rel="stylesheet" href="/css/search.min.590d0401452b756dfc7f5a58784776082977baeae9da0103fef22a9658192e37.css" />
+      
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+    
+      <link rel="stylesheet" href="/css/styles.min.84730ba81c57ea5efae40753d8155c63189280109d969173f4a340b46e8d01d7.css" />
+    
+  
+
+
+
+
+
+<link href="/font/Oswald-VariableFont_wght/result.css" rel="stylesheet" />
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.13.10/dist/cdn.min.js"></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.13.10/dist/cdn.min.js"></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.10/dist/cdn.min.js"></script>
+<script>
+
+  let _initDarkMode = localStorage.getItem("color-theme") === "dark" || (!("color-theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+  if (_initDarkMode) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+
+  let _enableBgImg = "true" === "true";
+  let _lightbgImg = '\/images\/default\/bg.svg';
+  let _darkbgImg = '\/images\/default\/bg-dark.svg';
+
+  if (_enableBgImg) {
+    let _lightbg = new Image();
+    let _darkbg = new Image();
+    _lightbg.src = _lightbgImg;
+    _darkbg.src = _darkbgImg;
+  }
+
+  document.addEventListener("alpine:init", () => {
+    Alpine.store("darkMode", {
+      on: _initDarkMode,
+      animate: 'false' === 'false',
+
+      initDark: _initDarkMode,
+      initLight: !(_initDarkMode),
+      toDarkAnimate: false,
+      toLightAnimate: false,
+
+      toggle() {
+        this.on = !this.on;
+
+        this.toDarkAnimate = this.animate && this.on && this.initLight;
+        this.toLightAnimate = this.animate && !this.on && this.initDark;
+
+        if (this.on) {
+          document.documentElement.classList.add("dark");
+          localStorage.setItem("color-theme", "dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+          localStorage.setItem("color-theme", "light");
+        }
+
+      },
+    });
+
+    Alpine.store('bgImg', {
+      on: _enableBgImg,
+      light: _lightbgImg,
+      dark: _darkbgImg,
+      bgImg: Alpine.store('darkMode').on ? this.dark : this.light, 
+
+      init() {
+        if (!this.on) {
+          this.light = "";
+          this.dark = "";
+        }
+        this.updateBgImg();
+        
+        Alpine.effect(() => {
+          this.updateBgImg();
+        });
+      },
+
+      updateBgImg() {
+        if (this.on) {
+          const darkModeOn = Alpine.store('darkMode').on;
+          this.bgImg = darkModeOn ? this.dark : this.light;
+        } else {
+          this.bgImg = "";
+        }
+      }
+    });
+
+  });
+</script>
+
+
+
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
+  </head>
+
+  <body
+    x-ref="body"
+    x-data="{ 
+      shrink: window.scrollY > 10 ? true : false,
+      scrollY: 0,
+      bgOpen: $store.bgImg.on,
+    }"
+    @scroll.window="shrink = (window.scrollY > 10 ? true : false)"
+    :style="'background-image: ' + 'url(' + $store.bgImg.bgImg + ')'"
+    :class="{'bg-white': !bgOpen, 'dark:bg-gray-900': !bgOpen, 'bg-cover': bgOpen, 'bg-fixed': bgOpen, 'dark:delay-300': $store.darkMode.animate}"
+    class="-z-10 flex h-screen flex-col scroll-auto">
+    
+    
+    
+    <div
+      x-show="$store.darkMode.toDarkAnimate"
+      x-cloak
+      x-transition:enter="animate-bgScaleInTr"
+      x-transition:leave="animate-bgScaleOutTr"
+      :style="'background-image: ' + 'url(' + $store.bgImg.dark + ')'"
+      :class="{'bg-gray-900': !bgOpen,'dark:bg-gray-900': !bgOpen, 'bg-cover': bgOpen, 'bg-fixed': bgOpen}"
+      class="fixed left-0 top-0 -z-10 h-full w-full"></div>
+    
+    
+    
+    <div
+      x-show="$store.darkMode.toLightAnimate"
+      x-cloak
+      x-transition:enter="animate-bgScaleOutTr"
+      x-transition:leave="animate-bgScaleInTr"
+      x-init="$watch(
+        '$store.darkMode.toLightAnimate', (value) => {
+          if (bgOpen) {
+            $el.style.backgroundImage = 'url(' + $store.bgImg.dark + ')'
+            if (value) {
+              setTimeout(() => {
+                $el.style.backgroundImage = 'url(' + $store.bgImg.light + ')'
+              }, 300)
+            } 
+          } else {
+            $el.classList.remove('bg-white');
+            $el.classList.add('bg-gray-900')
+            if (value) {
+              setTimeout(()=>{
+                $el.classList.remove('bg-gray-900');
+                $el.classList.add('bg-white')
+              }, 300)
+            } 
+          }
+        }
+      )"
+      :style="'background-image: ' + 'url(' + $store.bgImg.dark + ')'"
+      :class="{'bg-gray-900': !bgOpen,'dark:bg-gray-900': !bgOpen, 'bg-cover': bgOpen, 'bg-fixed': bgOpen}"
+      class="fixed left-0 top-0 -z-10 h-full w-full"></div><header x-data="{ isMobile: false }" class="z-40 h-38 w-full flex-shrink-0">
+  <nav
+    id="nav"
+    :class="{ 'h-25': shrink, 'h-38': !shrink, 'shadow-md': shrink, 'bg-white/85': shrink, 'dark:bg-gray-900/85': shrink, 'backdrop-blur-md': shrink}"
+    class="fixed inset-0 mx-auto flex h-38 items-center justify-between px-4 transition-all duration-500 ease-in-out"
+    aria-label="Global">
+    <div
+      class="mx-auto flex w-screen flex-wrap items-center justify-between place-self-center object-center px-1 md:w-[1000px] md:px-4">
+      <div class="flex lg:flex-1"><a x-data href="/" class="p-1.5">
+  <span class="sr-only">Seven 主题</span>
+  
+  
+  
+
+
+  <div class="w-[120px]">
+    
+    <img
+      x-cloak
+      x-show="!$store.darkMode.on"
+      src="/images/logo.svg"
+      class="h-[56px]"
+      alt="Logo" />
+    
+    <img
+      x-cloak
+      x-show="$store.darkMode.on"
+      src="/images/logo-footer.svg"
+      class="h-[56px]"
+      alt="Logo" />
+  </div></a>
+</div>
+
+      <div class="hidden lg:flex lg:gap-x-6">
+        
+  
+    <a
+      href="/docs/"
+      class="hs-menus text-sm font-semibold leading-6 text-gray-900 hover:text-[--hs-text-color-hover] dark:text-white"
+      >文档</a
+    >
+  
+
+  
+    <a
+      href="/posts/"
+      class="hs-menus text-sm font-semibold leading-6 text-gray-900 hover:text-[--hs-text-color-hover] dark:text-white"
+      >博文</a
+    >
+  
+
+  
+    <a
+      href="/tags/"
+      class="hs-menus text-sm font-semibold leading-6 text-gray-900 hover:text-[--hs-text-color-hover] dark:text-white"
+      >标签</a
+    >
+  
+
+  
+    <div x-data="{ isOpen: false }" class="hs-menus relative">
+      <button
+        type="button"
+        @click="isOpen = !isOpen"
+        class="group flex items-center text-sm font-semibold leading-6 text-gray-900 hover:text-[--hs-text-color-hover] dark:text-white"
+        aria-expanded="false">
+        其他
+        <svg
+          class="size-4 flex-none transition"
+          :class="{ 'rotate-180': isOpen }"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden="true">
+          <path
+            fill-rule="evenodd"
+            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+            clip-rule="evenodd" />
+        </svg>
+      </button>
+
+      <div
+        x-show="isOpen"
+        x-cloak
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0 translate-y-1"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 translate-y-1"
+        @click.away="isOpen = false"
+        @scroll.window.away="isOpen = (window.scrollY > 300 ? false : true)"
+        class="absolute -left-6 top-full z-10 mt-3 w-screen max-w-40 overflow-hidden rounded-xl bg-white/95 shadow-lg ring-1 ring-gray-900/5 backdrop-blur-xl dark:bg-gray-800/95">
+        <div class="p-2">
+          
+            <div
+              class="relative rounded-lg px-4 py-2.5 text-sm leading-6 hover:bg-gray-300/30 hover:backdrop-blur-md">
+              <a
+                href="/essays/"
+                class="block font-semibold text-gray-900 hover:text-[--hs-text-color-hover] dark:text-gray-400 dark:hover:text-white">
+                随笔
+                <span class="absolute inset-0"></span>
+              </a>
+            </div>
+          
+            <div
+              class="relative rounded-lg px-4 py-2.5 text-sm leading-6 hover:bg-gray-300/30 hover:backdrop-blur-md">
+              <a
+                href="/archive/"
+                class="block font-semibold text-gray-900 hover:text-[--hs-text-color-hover] dark:text-gray-400 dark:hover:text-white">
+                归档
+                <span class="absolute inset-0"></span>
+              </a>
+            </div>
+          
+            <div
+              class="relative rounded-lg px-4 py-2.5 text-sm leading-6 hover:bg-gray-300/30 hover:backdrop-blur-md">
+              <a
+                href="https://github.com/Cheung40"
+                class="block font-semibold text-gray-900 hover:text-[--hs-text-color-hover] dark:text-gray-400 dark:hover:text-white">
+                Github
+                <span class="absolute inset-0"></span>
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+
+
+  <div x-data="{ isOpen: false }" class="hs-menus relative">
+    <button
+      type="button"
+      @click="isOpen = !isOpen"
+      class="group flex items-center text-sm font-semibold leading-6 text-gray-900 hover:text-[--hs-text-color-hover] dark:text-white"
+      aria-expanded="false">
+      分类
+      <svg
+        class="size-4 flex-none transition"
+        :class="{ 'rotate-180': isOpen }"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        aria-hidden="true">
+        <path
+          fill-rule="evenodd"
+          d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+          clip-rule="evenodd" />
+      </svg>
+    </button>
+
+    <div
+      x-show="isOpen"
+      x-cloak
+      x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0 translate-y-1"
+      x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-150"
+      x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 translate-y-1"
+      @click.away="isOpen = false"
+      @scroll.window.away="isOpen = false"
+      class="absolute -left-6 top-full z-10 mt-3 w-screen max-w-40 overflow-hidden rounded-xl bg-white/95 shadow-lg ring-1 ring-gray-900/5 backdrop-blur-xl dark:bg-gray-800/95">
+      <div class="p-2">
+        
+          <div
+            class="relative rounded-lg px-4 py-2.5 text-sm leading-6 hover:bg-gray-300/30 hover:backdrop-blur-md">
+            <a
+              href="https://cheung40.github.io/categories/go-tutorial/"
+              class="block font-semibold text-gray-900 hover:text-[--hs-text-color-hover] dark:text-gray-400 dark:hover:text-white">
+              Go Tutorial
+              <span class="absolute inset-0"></span>
+            </a>
+          </div>
+        
+          <div
+            class="relative rounded-lg px-4 py-2.5 text-sm leading-6 hover:bg-gray-300/30 hover:backdrop-blur-md">
+            <a
+              href="https://cheung40.github.io/categories/%E6%96%87%E6%A1%A3/"
+              class="block font-semibold text-gray-900 hover:text-[--hs-text-color-hover] dark:text-gray-400 dark:hover:text-white">
+              文档
+              <span class="absolute inset-0"></span>
+            </a>
+          </div>
+        
+          <div
+            class="relative rounded-lg px-4 py-2.5 text-sm leading-6 hover:bg-gray-300/30 hover:backdrop-blur-md">
+            <a
+              href="https://cheung40.github.io/categories/%E9%9A%8F%E7%AC%94/"
+              class="block font-semibold text-gray-900 hover:text-[--hs-text-color-hover] dark:text-gray-400 dark:hover:text-white">
+              随笔
+              <span class="absolute inset-0"></span>
+            </a>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+      </div>
+
+      <div class="flex flex-1 items-center justify-end">
+  <div x-data="{ isOpen: false }" class="relative">
+    <button
+      type="button"
+      @click="isOpen = !isOpen"
+      class="group flex size-10 items-center rounded-full p-[11px] text-black transition hover:bg-white hover:shadow-[0_7px_29px_0_rgba(100,100,111,0.2)] dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:shadow-[0_5px_15px_rgba(0,0,0,0.35)]"
+      aria-expanded="false">
+      <svg
+        class="size-[18px]"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 -960 960 960">
+        <path
+          d="m476-80 182-480h84L924-80h-84l-43-122H603L560-80h-84ZM160-200l-56-56 202-202q-35-35-63.5-80T190-640h84q20 39 40 68t48 58q33-33 68.5-92.5T484-720H40v-80h280v-80h80v80h280v80H564q-21 72-63 148t-83 116l96 98-30 82-122-125-202 201Zm468-72h144l-72-204-72 204Z" />
+      </svg>
+    </button>
+
+    <div
+      x-show="isOpen"
+      x-cloak
+      x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0 translate-y-1"
+      x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-150"
+      x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 translate-y-1"
+      @click.away="isOpen = false"
+      class="absolute -left-5 top-full z-10 mt-3 w-screen max-w-32 overflow-hidden rounded-xl bg-white/95 shadow-lg ring-1 ring-gray-900/5 backdrop-blur-xl dark:bg-gray-800/95">
+      <div class="p-2">
+        
+          <div
+            class="relative rounded-lg px-4 py-2.5 text-sm leading-6 hover:bg-gray-300/30 hover:backdrop-blur-md">
+            <a
+              class="block font-semibold text-gray-900 hover:text-[--hs-text-color-hover] dark:text-gray-400 dark:hover:text-white"
+              href="/"
+              >简体中文</a
+            >
+          </div>
+        
+          <div
+            class="relative rounded-lg px-4 py-2.5 text-sm leading-6 hover:bg-gray-300/30 hover:backdrop-blur-md">
+            <a
+              class="block font-semibold text-gray-900 hover:text-[--hs-text-color-hover] dark:text-gray-400 dark:hover:text-white"
+              href="/en/"
+              >English</a
+            >
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+<div class="flex size-10">
+  <button
+    type="button"
+    @click="$store.darkMode.toggle()"
+    class="group rounded-full p-2.5 text-sm text-black transition hover:bg-white hover:shadow-[0_7px_29px_0_rgba(100,100,111,0.2)] dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:shadow-[0_5px_15px_rgba(0,0,0,0.35)]">
+    <svg
+      x-show="!$store.darkMode.on"
+      x-cloak
+      class="size-5"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 -960 960 960">
+      <path
+        d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z" />
+    </svg>
+
+    <svg
+      x-show="$store.darkMode.on"
+      x-cloak
+      class="size-5"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 -960 960 960">
+      <path
+        d="M480-360q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0 80q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Zm326-268Z" />
+    </svg>
+  </button>
+</div>
+
+  <div class="flex size-10">
+    <button
+      type="button"
+      id="search-icon"
+      class="rounded-full p-2.5 text-center text-black transition hover:bg-white hover:shadow-[0_7px_29px_0_rgba(100,100,111,0.2)] dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:shadow-[0_5px_15px_rgba(0,0,0,0.35)]">
+      <svg
+        class="h-5 w-5"
+        fill="currentColor"
+        viewBox="0 0 1024 1024"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        p-id="4284">
+        <path
+          d="M769.323 708.992l182.741 182.699-60.373 60.373-182.699-182.741a382.293 382.293 0 0 1-239.659 84.01c-211.968 0-384-172.032-384-384s172.032-384 384-384 384 172.032 384 384a382.293 382.293 0 0 1-84.01 239.659z m-85.59-31.659a297.685 297.685 0 0 0 84.267-208c0-165.034-133.675-298.666-298.667-298.666-165.034 0-298.666 133.632-298.666 298.666C170.667 634.325 304.299 768 469.333 768a297.685 297.685 0 0 0 208-84.267l6.4-6.4z"
+          p-id="4285"></path>
+      </svg>
+    </button>
+  </div>
+
+<div class="flex lg:hidden">
+          <button
+            type="button"
+            @click="isMobile = true; scrollY = window.scrollY; document.body.style.overflow = 'hidden';"
+            class="group inline-flex items-center justify-center rounded-full p-2.5 text-center text-black transition hover:bg-white hover:shadow-[0_7px_29px_0_rgba(100,100,111,0.2)] dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:shadow-[0_5px_15px_rgba(0,0,0,0.35)]">
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="size-5"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+              p-id="9670">
+              <path
+                d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zM904 784H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zM904 472H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"
+                p-id="9671"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div x-show="isMobile" x-cloak role="dialog" aria-modal="true">
+    <div class="fixed inset-0 z-10"></div>
+    <div
+      class="fixed inset-0 z-10 w-full overflow-y-auto bg-white/85 p-4 backdrop-blur-md dark:bg-gray-900/85 sm:ring-1 sm:ring-gray-900/10">
+      <div class="mx-auto mt-10 flex w-full items-center justify-center"><a x-data href="/" class="p-1.5">
+  <span class="sr-only">Seven 主题</span>
+  
+  
+  
+
+
+  <div class="w-[120px]">
+    
+    <img
+      x-cloak
+      x-show="!$store.darkMode.on"
+      src="/images/logo.svg"
+      class="h-[56px]"
+      alt="Logo" />
+    
+    <img
+      x-cloak
+      x-show="$store.darkMode.on"
+      src="/images/logo-footer.svg"
+      class="h-[56px]"
+      alt="Logo" />
+  </div></a>
+</div>
+
+      <div class="mt-6 flow-root">
+        <div class="-my-6 divide-y divide-gray-500/10">
+          <div class="flex flex-col space-y-2 py-6">
+            
+  
+    <a
+      href="/docs/"
+      class="hs-menus w-full rounded-lg px-3 py-2 text-center text-base font-semibold leading-7 text-gray-900 hover:text-[--hs-text-color-hover] dark:text-white"
+      >文档</a
+    >
+  
+
+  
+    <a
+      href="/posts/"
+      class="hs-menus w-full rounded-lg px-3 py-2 text-center text-base font-semibold leading-7 text-gray-900 hover:text-[--hs-text-color-hover] dark:text-white"
+      >博文</a
+    >
+  
+
+  
+    <a
+      href="/tags/"
+      class="hs-menus w-full rounded-lg px-3 py-2 text-center text-base font-semibold leading-7 text-gray-900 hover:text-[--hs-text-color-hover] dark:text-white"
+      >标签</a
+    >
+  
+
+  
+    <div x-data="{ subMenuOpen: false }" class="hs-menus">
+      <button
+        @click="subMenuOpen = !subMenuOpen"
+        type="button"
+        :class="{ 'text-[--hs-text-color-hover]': subMenuOpen, 'text-gray-900': !subMenuOpen, 'dark:text-[--hs-text-color-hover]': subMenuOpen, 'dark:text-white': !subMenuOpen }"
+        class="group flex w-full flex-col items-center justify-center rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:text-[--hs-text-color-hover]"
+        aria-controls="disclosure-1"
+        aria-expanded="false">
+        <span>其他</span>
+        <svg
+          :class="{ 'rotate-180': subMenuOpen }"
+          class="size-4 flex-none transition"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden="true">
+          <path
+            fill-rule="evenodd"
+            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+            clip-rule="evenodd" />
+        </svg>
+      </button>
+      <div
+        x-show="subMenuOpen"
+        x-cloak
+        x-collapse
+        class="flex flex-col space-y-1"
+        id="disclosure-1">
+        
+          <a
+            href="/essays/"
+            class="w-full rounded-lg px-3 py-2 text-center text-sm font-semibold leading-7 text-gray-900 hover:text-[--hs-text-color-hover] dark:text-white"
+            >随笔</a
+          >
+        
+          <a
+            href="/archive/"
+            class="w-full rounded-lg px-3 py-2 text-center text-sm font-semibold leading-7 text-gray-900 hover:text-[--hs-text-color-hover] dark:text-white"
+            >归档</a
+          >
+        
+          <a
+            href="https://github.com/Cheung40"
+            class="w-full rounded-lg px-3 py-2 text-center text-sm font-semibold leading-7 text-gray-900 hover:text-[--hs-text-color-hover] dark:text-white"
+            >Github</a
+          >
+        
+
+      </div>
+    </div>
+  
+
+
+
+  <div x-data="{ subMenuOpen: false }" class="hs-menus">
+    <button
+      @click="subMenuOpen = !subMenuOpen"
+      type="button"
+      :class="{ 'text-[--hs-text-color-hover]': subMenuOpen, 'text-gray-900': !subMenuOpen, 'dark:text-[--hs-text-color-hover]': subMenuOpen, 'dark:text-white': !subMenuOpen }"
+      class="group flex w-full flex-col items-center justify-center rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:text-[--hs-text-color-hover] dark:text-white"
+      aria-controls="disclosure-1"
+      aria-expanded="false">
+      分类
+      <svg
+        :class="{ 'rotate-180': subMenuOpen }"
+        class="size-4 flex-none transition"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        aria-hidden="true">
+        <path
+          fill-rule="evenodd"
+          d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+          clip-rule="evenodd" />
+      </svg>
+    </button>
+
+    <div
+      x-show="subMenuOpen"
+      x-cloak
+      x-collapse
+      class="flex flex-col space-y-1"
+      id="disclosure-1">
+      
+        <a
+          href="https://cheung40.github.io/categories/go-tutorial/"
+          class="block rounded-lg px-3 py-2 text-center text-sm font-semibold leading-7 text-gray-900 hover:text-[--hs-text-color-hover] dark:text-white"
+          >Go Tutorial</a
+        >
+      
+        <a
+          href="https://cheung40.github.io/categories/%E6%96%87%E6%A1%A3/"
+          class="block rounded-lg px-3 py-2 text-center text-sm font-semibold leading-7 text-gray-900 hover:text-[--hs-text-color-hover] dark:text-white"
+          >文档</a
+        >
+      
+        <a
+          href="https://cheung40.github.io/categories/%E9%9A%8F%E7%AC%94/"
+          class="block rounded-lg px-3 py-2 text-center text-sm font-semibold leading-7 text-gray-900 hover:text-[--hs-text-color-hover] dark:text-white"
+          >随笔</a
+        >
+      
+
+    </div>
+  </div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-14 flex h-12 w-full flex-col items-center justify-center">
+        <button
+          @click="isMobile = false; document.body.style.overflow = ''; window.scrollTo(0, scrollY);"
+          class="buttom-circle flex h-12 w-12 items-center justify-center rounded-full bg-white/85 p-3 text-gray-900 backdrop-blur-md  hover:text-gray-500 dark:bg-gray-800/85 dark:text-gray-200">
+          <span class="sr-only">Close mobile menu</span>
+          <svg
+            fill="currentColor"
+            class="h-4 w-4"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="5967">
+            <path
+              d="M143.616 47.104l830.08 830.08c26.24 26.24 26.24 69.888 0 96.128-26.24 26.24-69.888 26.24-96.128 0L47.488 143.232c-17.536-26.24-17.536-69.888 0-96.128 26.24-26.24 69.888-26.24 96.128 0z m0 0"
+              p-id="5968"></path>
+            <path
+              d="M982.528 143.232L152.32 973.312c-26.24 26.24-69.888 26.24-96.128 0-26.24-26.24-26.24-69.888 0-96.128L886.4 47.104c26.24-26.24 69.888-26.24 96.128 0 17.408 26.24 17.408 69.888 0 96.128z m0 0"
+              p-id="5969"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <div
+    class="flex max-h-screen w-full grow flex-col items-center justify-center space-x-8 space-y-16 lg:flex-row lg:space-y-0 2xl:space-x-0">
+    <div
+      class="flex w-full flex-col items-center justify-center text-center lg:w-1/2 lg:px-2 xl:px-0">
+      <p
+        class="text-7xl font-bold tracking-wider text-gray-300 md:text-8xl lg:text-9xl">
+        404
+      </p>
+      <p
+        class="mt-2 text-4xl font-bold tracking-wider text-gray-300 md:text-5xl lg:text-6xl">
+        Page Not Found
+      </p>
+      <p class="my-12 text-lg text-gray-500 md:text-xl lg:text-2xl">
+        Sorry, the page you are looking for could not be found.
+      </p>
+      <a
+        href="https://cheung40.github.io/"
+        class="flex items-center space-x-2 rounded bg-blue-600 px-4 py-2 text-gray-100 transition duration-150 hover:bg-blue-700"
+        title="Return Home">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="currentColor">
+          <path
+            fill-rule="evenodd"
+            d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <span>Return Home</span>
+      </a>
+    </div>
+    <div class="flex w-1/2 justify-center p-4 lg:h-full lg:items-end">
+      <svg
+        class="w-full text-blue-600"
+        xmlns="http://www.w3.org/2000/svg"
+        data-name="Layer 1"
+        viewBox="0 0 1120.59226 777.91584"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>not found</title>
+        <circle cx="212.59226" cy="103" r="64" fill="#ff6584"></circle>
+        <path
+          d="M563.68016,404.16381c0,151.01141-89.77389,203.73895-200.51559,203.73895S162.649,555.17522,162.649,404.16381,363.16457,61.04208,363.16457,61.04208,563.68016,253.1524,563.68016,404.16381Z"
+          transform="translate(-39.70387 -61.04208)"
+          fill="#cbd5e1"></path>
+        <polygon
+          points="316.156 523.761 318.21 397.378 403.674 241.024 318.532 377.552 319.455 320.725 378.357 207.605 319.699 305.687 319.699 305.687 321.359 203.481 384.433 113.423 321.621 187.409 322.658 0 316.138 248.096 316.674 237.861 252.547 139.704 315.646 257.508 309.671 371.654 309.493 368.625 235.565 265.329 309.269 379.328 308.522 393.603 308.388 393.818 308.449 394.99 293.29 684.589 313.544 684.589 315.974 535.005 389.496 421.285 316.156 523.761"
+          fill="#3f3d56"></polygon>
+        <path
+          d="M1160.29613,466.01367c0,123.61-73.4842,166.77-164.13156,166.77s-164.13156-43.16-164.13156-166.77S996.16457,185.15218,996.16457,185.15218,1160.29613,342.40364,1160.29613,466.01367Z"
+          transform="translate(-39.70387 -61.04208)"
+          fill="#cbd5e1"></path>
+        <polygon
+          points="950.482 552.833 952.162 449.383 1022.119 321.4 952.426 433.154 953.182 386.639 1001.396 294.044 953.382 374.329 953.382 374.329 954.741 290.669 1006.369 216.952 954.954 277.514 955.804 124.11 950.467 327.188 950.906 318.811 898.414 238.464 950.064 334.893 945.173 428.327 945.027 425.847 884.514 341.294 944.844 434.608 944.232 446.293 944.123 446.469 944.173 447.428 931.764 684.478 948.343 684.478 950.332 562.037 1010.514 468.952 950.482 552.833"
+          fill="#3f3d56"></polygon>
+        <ellipse
+          cx="554.59226"
+          cy="680.47903"
+          rx="554.59226"
+          ry="28.03433"
+          fill="#3f3d56"></ellipse>
+        <ellipse
+          cx="892.44491"
+          cy="726.79663"
+          rx="94.98858"
+          ry="4.80162"
+          fill="#3f3d56"></ellipse>
+        <ellipse
+          cx="548.71959"
+          cy="773.11422"
+          rx="94.98858"
+          ry="4.80162"
+          fill="#3f3d56"></ellipse>
+        <ellipse
+          cx="287.94432"
+          cy="734.27887"
+          rx="217.01436"
+          ry="10.96996"
+          fill="#3f3d56"></ellipse>
+        <circle cx="97.08375" cy="566.26982" r="79" fill="#2f2e41"></circle>
+        <rect
+          x="99.80546"
+          y="689.02332"
+          width="24"
+          height="43"
+          transform="translate(-31.32451 -62.31008) rotate(0.67509)"
+          fill="#2f2e41"></rect>
+        <rect
+          x="147.80213"
+          y="689.58887"
+          width="24"
+          height="43"
+          transform="translate(-31.31452 -62.87555) rotate(0.67509)"
+          fill="#2f2e41"></rect>
+        <ellipse
+          cx="119.54569"
+          cy="732.61606"
+          rx="7.5"
+          ry="20"
+          transform="translate(-654.1319 782.47948) rotate(-89.32491)"
+          fill="#2f2e41"></ellipse>
+        <ellipse
+          cx="167.55414"
+          cy="732.18168"
+          rx="7.5"
+          ry="20"
+          transform="translate(-606.25475 830.05533) rotate(-89.32491)"
+          fill="#2f2e41"></ellipse>
+        <circle cx="99.31925" cy="546.29477" r="27" fill="#fff"></circle>
+        <circle cx="99.31925" cy="546.29477" r="9" fill="#3f3d56"></circle>
+        <path
+          d="M61.02588,552.94636c-6.04185-28.64075,14.68758-57.26483,46.30049-63.93367s62.13813,11.14292,68.18,39.78367-14.97834,38.93-46.59124,45.59886S67.06774,581.58712,61.02588,552.94636Z"
+          transform="translate(-39.70387 -61.04208)"
+          fill="currentColor"></path>
+        <path
+          d="M257.29613,671.38411c0,55.07585-32.73985,74.3063-73.13,74.3063q-1.40351,0-2.80255-.0312c-1.87139-.04011-3.72494-.1292-5.55619-.254-36.45135-2.57979-64.77127-22.79937-64.77127-74.02113,0-53.00843,67.73872-119.89612,72.827-124.84633l.00892-.00889c.19608-.19159.29409-.28516.29409-.28516S257.29613,616.30827,257.29613,671.38411Z"
+          transform="translate(-39.70387 -61.04208)"
+          fill="currentColor"></path>
+        <path
+          d="M181.50168,737.26482l26.747-37.37367-26.81386,41.4773-.07125,4.29076c-1.87139-.04011-3.72494-.1292-5.55619-.254l2.88282-55.10258-.0223-.42775.049-.0802.27179-5.20415-26.88076-41.5798,26.96539,37.67668.06244,1.105,2.17874-41.63324-23.0132-42.96551,23.29391,35.6583,2.26789-86.31419.00892-.294v.28516l-.37871,68.064,22.91079-26.98321-23.00435,32.84678-.60595,37.27566L204.18523,621.958l-21.4805,41.259-.33863,20.723,31.05561-49.79149-31.17146,57.023Z"
+          transform="translate(-39.70387 -61.04208)"
+          fill="#3f3d56"></path>
+        <circle cx="712.48505" cy="565.41532" r="79" fill="#2f2e41"></circle>
+        <rect
+          x="741.77716"
+          y="691.82355"
+          width="24"
+          height="43"
+          transform="translate(-215.99457 191.86399) rotate(-17.08345)"
+          fill="#2f2e41"></rect>
+        <rect
+          x="787.6593"
+          y="677.72286"
+          width="24"
+          height="43"
+          transform="matrix(0.95588, -0.29376, 0.29376, 0.95588, -209.82788, 204.72037)"
+          fill="#2f2e41"></rect>
+        <ellipse
+          cx="767.887"
+          cy="732.00275"
+          rx="20"
+          ry="7.5"
+          transform="translate(-220.8593 196.83312) rotate(-17.08345)"
+          fill="#2f2e41"></ellipse>
+        <ellipse
+          cx="813.47537"
+          cy="716.94619"
+          rx="20"
+          ry="7.5"
+          transform="translate(-214.42477 209.56103) rotate(-17.08345)"
+          fill="#2f2e41"></ellipse>
+        <circle cx="708.52153" cy="545.71023" r="27" fill="#fff"></circle>
+        <circle cx="708.52153" cy="545.71023" r="9" fill="#3f3d56"></circle>
+        <path
+          d="M657.35526,578.74316c-14.48957-25.43323-3.47841-59.016,24.59412-75.0092s62.57592-8.34055,77.06549,17.09268-2.39072,41.6435-30.46325,57.63671S671.84483,604.17639,657.35526,578.74316Z"
+          transform="translate(-39.70387 -61.04208)"
+          fill="currentColor"></path>
+        <path
+          d="M611.29613,661.29875c0,50.55711-30.05368,68.20979-67.13,68.20979q-1.28835,0-2.57261-.02864c-1.71785-.03682-3.41933-.1186-5.10033-.23313-33.46068-2.36813-59.45707-20.92878-59.45707-67.948,0-48.65932,62.18106-110.05916,66.85186-114.60322l.00819-.00817c.18-.17587.27-.26177.27-.26177S611.29613,610.74164,611.29613,661.29875Z"
+          transform="translate(-39.70387 -61.04208)"
+          fill="currentColor"></path>
+        <path
+          d="M541.72029,721.77424l24.55253-34.30732-24.6139,38.07426-.0654,3.93872c-1.71785-.03682-3.41933-.1186-5.10033-.23313l2.6463-50.58165-.02047-.39266.045-.07361.24949-4.77718-24.67531-38.16836,24.753,34.58547.05731,1.01433,2-38.21741-21.12507-39.44039L541.80616,625.928l2.08182-79.23247.00819-.26994v.26177l-.34764,62.47962,21.031-24.76934-21.11693,30.15184-.55624,34.21735,19.63634-32.839-19.71812,37.87389-.31085,19.0228,28.50763-45.70631-28.614,52.34448Z"
+          transform="translate(-39.70387 -61.04208)"
+          fill="#3f3d56"></path>
+        <path
+          d="M875.29613,682.38411c0,55.07585-32.73985,74.3063-73.13,74.3063q-1.4035,0-2.80255-.0312c-1.87139-.04011-3.72494-.1292-5.55619-.254-36.45135-2.57979-64.77127-22.79937-64.77127-74.02113,0-53.00843,67.73872-119.89612,72.827-124.84633l.00892-.00889c.19608-.19159.29409-.28516.29409-.28516S875.29613,627.30827,875.29613,682.38411Z"
+          transform="translate(-39.70387 -61.04208)"
+          fill="currentColor"></path>
+        <path
+          d="M799.50168,748.26482l26.747-37.37367-26.81386,41.4773-.07125,4.29076c-1.87139-.04011-3.72494-.1292-5.55619-.254l2.88282-55.10258-.0223-.42775.049-.0802.27179-5.20415L770.108,654.01076l26.96539,37.67668.06244,1.105,2.17874-41.63324-23.0132-42.96551,23.29391,35.6583,2.26789-86.31419.00892-.294v.28516l-.37871,68.064,22.91079-26.98321-23.00435,32.84678-.606,37.27566L822.18523,632.958l-21.4805,41.259-.33863,20.723,31.05561-49.79149-31.17146,57.023Z"
+          transform="translate(-39.70387 -61.04208)"
+          fill="#3f3d56"></path>
+        <ellipse
+          cx="721.51694"
+          cy="656.82212"
+          rx="12.40027"
+          ry="39.5"
+          transform="translate(-220.83517 966.22323) rotate(-64.62574)"
+          fill="#2f2e41"></ellipse>
+        <ellipse
+          cx="112.51694"
+          cy="651.82212"
+          rx="12.40027"
+          ry="39.5"
+          transform="translate(-574.07936 452.71367) rotate(-68.15829)"
+          fill="#2f2e41"></ellipse>
+      </svg>
+    </div>
+  </div>
+
+
+    
+      
+<div
+  id="search-overlay"
+  class="fixed inset-0 z-50 hidden bg-gray-900/90 backdrop-blur-lg dark:bg-gray-900/80"></div>
+<section
+  id="search-section"
+  class="hs-search z-50 flex hidden h-dvh w-full flex-col">
+  
+  <div
+    class="flex h-dvh w-full flex-col overflow-auto md:mx-auto md:w-2/3 lg:max-w-2xl">
+    
+    <div
+      id="searchBoxDiv"
+      class="hs-search-input-wrapper sticky top-[-88px] z-50 flex flex-row justify-between px-8 pt-[88px]">
+      <div id="searchBox" class="my-6 flex w-full flex-row items-center"></div>
+    </div>
+
+    
+    <div class="hs-search-results-wrapper h-[30rem] overflow-auto">
+      <div id="searchResults" class="hs-search-results my-3 px-6"></div>
+      <div
+        id="NotSearchResults"
+        class="hidden flex-col items-center justify-around space-y-4 px-6 py-10">
+        <p
+          class="hs-search-no-results text-lg font-bold tracking-wide text-gray-500">
+          找不到搜索内容
+        </p>
+      </div>
+      <div
+        id="searchError"
+        class="hidden flex-col items-center justify-around space-y-4 px-6 py-10 text-center ">
+        <p class="hs-search-error text-lg font-bold text-red-500">
+          
+        </p>
+      </div>
+      <div
+        id="searchLoading"
+        class="hidden flex-col items-center justify-around px-6 py-10">
+        <svg
+          t="1689331200868"
+          class="icon animate-spin"
+          viewBox="0 0 1024 1024"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          p-id="51409"
+          width="128"
+          height="128">
+          <path
+            d="M512 170.666667v85.333333a256 256 0 1 1-223.573333 131.2L213.930667 345.6A341.333333 341.333333 0 1 0 512 170.666667z"
+            fill="#bfbfbf"
+            opacity=".3"
+            p-id="51410"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+  
+  <div
+    class="hs-search-other bottom-0 flex flex-col items-center justify-center space-y-2 py-8 text-xs font-bold text-gray-600">
+    <div class="hs-search-cancel hidden md:block">
+      按 ESC 取消
+    </div>
+    <div class="hs-search-powered_by flex items-center justify-center">
+      
+      由 &nbsp;<img src="/images/default/algolia-logo.svg" alt="" class="h-4" />&nbsp; 提供支持
+    </div>
+  </div>
+</section>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/algoliasearch@4.17.2/dist/algoliasearch-lite.umd.js"
+  integrity="sha256-X2G+vjV8i6Jj2NSGFTvy6Z4q2AlmF5aH0HiIpWJ8eU4="
+  crossorigin="anonymous"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.56.3/dist/instantsearch.production.min.js"
+  integrity="sha256-mWvjWAfZylKMOg+S3HLq+wng1HHRnl2Idr2r8NsUzIU="
+  crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+  
+
+<script src="/js/search.min.14ac10b2ca10b31730c274dd54808456a6a9cc3cc3f3667df2571e17e665871b.js"></script>
+
+    <footer
+  id="footer"
+  x-ref="footer"
+  class="hs-footer mx-auto mt-5 flex flex-col items-center gap-y-3 py-6 text-xs text-gray-700 dark:text-gray-500">
+  <span class="h-px w-full max-w-4xl bg-gray-700 dark:bg-gray-600"></span>
+
+  <div class="flex h-5 space-x-3">
+    
+  
+    <a
+      href="mailto:suxiaomu6@outlook.com"
+      class="text-gray-600 hover:text-[--hs-text-color-hover] dark:text-gray-400 dark:hover:text-white">
+      <svg
+        class="size-4"
+        aria-hidden="true"
+        fill="currentColor"
+        viewBox="0 0 1024 1024"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M513 583.8l448.5-448.5c-11.6-4.7-24.3-7.3-37.5-7.3H100c-12.7 0-24.9 2.4-36.1 6.7L513 583.8z"
+          p-id="88208"></path>
+        <path
+          d="M513 674.3L14.6 175.9C5.3 191.1 0 208.9 0 228v568c0 55.2 44.8 100 100 100h824c55.2 0 100-44.8 100-100V228c0-18.5-5.1-35.9-13.9-50.8L513 674.3z"
+          p-id="88209"></path>
+      </svg>
+      <span class="sr-only">Email page</span>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <a
+      href="https://github.com/Cheung40"
+      class="text-gray-600 hover:text-[--hs-text-color-hover] dark:text-gray-400 dark:hover:text-white">
+      <svg
+        class="size-4"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 20 20">
+        <path
+          fill-rule="evenodd"
+          d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
+          clip-rule="evenodd" />
+      </svg>
+      <span class="sr-only">GitHub account</span>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div x-data="{ openQC: false }">
+      <button
+        @click="openQC = !openQC; scrollY = window.scrollY; document.body.style.overflow = 'hidden';"
+        class="group relative block text-gray-600 hover:text-[--hs-text-color-hover] dark:text-gray-400 dark:hover:text-white">
+        <div
+          class="items-endtransition-transform relative flex h-full transform">
+          <div
+            class="transition-opacity group-hover:absolute group-hover:opacity-0">
+            <svg
+              class="size-4"
+              viewBox="0 0 1184 1024"
+              fill="currentColor"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              p-id="1495">
+              <path
+                d="M331.424 263.424q0-23.424-14.272-37.728t-37.728-14.272q-24.576 0-43.424 14.56t-18.848 37.44q0 22.272 18.848 36.864t43.424 14.56q23.424 0 37.728-14.016t14.272-37.44zM756 553.152q0-16-14.56-28.576t-37.44-12.576q-15.424 0-28.288 12.864t-12.864 28.288q0 16 12.864 28.864t28.288 12.864q22.848 0 37.44-12.576t14.56-29.152zM621.152 263.424q0-23.424-14.016-37.728t-37.44-14.272q-24.576 0-43.424 14.56t-18.848 37.44q0 22.272 18.848 36.864t43.424 14.56q23.424 0 37.44-14.016t14.016-37.44zM984 553.152q0-16-14.848-28.576t-37.152-12.576q-15.424 0-28.288 12.864t-12.864 28.288q0 16 12.864 28.864t28.288 12.864q22.272 0 37.152-12.576t14.848-29.152zM832 326.272q-17.728-2.272-40-2.272-96.576 0-177.728 44t-127.712 119.136-46.56 164.288q0 44.576 13.152 86.848-20 1.728-38.848 1.728-14.848 0-28.576-0.864t-31.424-3.712-25.44-4-31.136-6.016-28.576-6.016l-144.576 72.576 41.152-124.576q-165.728-116-165.728-280 0-96.576 55.712-177.728t150.848-127.712 207.712-46.56q100.576 0 190.016 37.728t149.728 104.288 78.016 148.864zM1170.272 646.848q0 66.848-39.136 127.712t-106.016 110.56l31.424 103.424-113.728-62.272q-85.728 21.152-124.576 21.152-96.576 0-177.728-40.288t-127.712-109.44-46.56-150.848 46.56-150.848 127.712-109.44 177.728-40.288q92 0 173.152 40.288t130.016 109.728 48.864 150.56z"
+                p-id="1496"></path>
+            </svg>
+          </div>
+
+          <div
+            class="absolute opacity-0 transition-opacity group-hover:relative group-hover:opacity-100">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="size-4"
+              fill="currentColor"
+              viewBox="0 -960 960 960">
+              <path
+                d="M520-120v-80h80v80h-80Zm-80-80v-200h80v200h-80Zm320-120v-160h80v160h-80Zm-80-160v-80h80v80h-80Zm-480 80v-80h80v80h-80Zm-80-80v-80h80v80h-80Zm360-280v-80h80v80h-80ZM180-660h120v-120H180v120Zm-60 60v-240h240v240H120Zm60 420h120v-120H180v120Zm-60 60v-240h240v240H120Zm540-540h120v-120H660v120Zm-60 60v-240h240v240H600Zm80 480v-120h-80v-80h160v120h80v80H680ZM520-400v-80h160v80H520Zm-160 0v-80h-80v-80h240v80h-80v80h-80Zm40-200v-160h80v80h80v80H400Zm-190-90v-60h60v60h-60Zm0 480v-60h60v60h-60Zm480-480v-60h60v60h-60Z" />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        x-show="openQC"
+        x-transition:leave="ease-in duration-500"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        @keydown.window.escape="openQC = false; document.body.style.overflow = ''; window.scrollTo(0, scrollY);"
+        x-cloak
+        role="dialog"
+        aria-modal="true">
+        <div
+          class="fixed inset-0 z-50 bg-gray-900/85 backdrop-blur-md transition-opacity"></div>
+        <div class="fixed inset-0 z-50 w-full">
+          <div class="mx-auto flex h-full w-full items-center justify-center">
+            <img
+              @click.away="openQC = false; document.body.style.overflow = ''; window.scrollTo(0, scrollY);"
+              class="object-cover"
+              x-transition:leave="ease-in duration-500"
+              x-transition:leave-start="opacity-100"
+              x-transition:leave-end="opacity-0"
+              :class="openQC ? 'animate-scaleInCenter' : 'animate-scaleOutCenter'"
+              src="/images/society/wechat/wechat.jpg"
+              alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<a
+  href="#"
+  class="text-gray-600 hover:text-[--hs-text-color-hover] dark:text-gray-400 dark:hover:text-white">
+  <svg
+    class="size-4"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 20 20">
+    <path
+      fill-rule="evenodd"
+      d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z"
+      clip-rule="evenodd" />
+  </svg>
+  <span class="sr-only">Dribbble account</span>
+</a>
+
+
+  </div>
+
+  
+  
+  <span x-data class="flex flex-row items-center justify-center"
+    >由<a href="https://gohugo.io/" aria-label="hugo link">
+    <img
+    src="/images/default/hugo-logo-wide.svg"
+    alt="Hugo"
+    class="mx-1 h-3" />
+    </a>提供支持</span
+  >
+
+  <span class="flex flex-col items-center justify-between space-y-3">
+    &copy;
+    
+    
+    
+      2023 -
+      2024
+    
+
+    Kevin
+    版权所有
+  </span>
+</footer>
+
+  
+    <script
+      data-goatcounter="https://seven-demo.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"></script>
+  
+
+</body>
+</html>

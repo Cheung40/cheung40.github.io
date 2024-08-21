@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ndjson on Seven 主题</title>
+    <link>https://cheung40.github.io/tags/ndjson/</link>
+    <description>Recent content in Ndjson on Seven 主题</description>
+    <generator>Hugo</generator>
+    <language>zh-hans</language>
+    <lastBuildDate>Thu, 25 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cheung40.github.io/tags/ndjson/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>essays上传数据到 Algolia</title>
+      <link>https://cheung40.github.io/essays/upload-data-to-algolia/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/essays/upload-data-to-algolia/</guid>
+      <description>主题推荐使用 Algolia CLI 方式将数据上传到 Algolia。 上传数据需要用到 algolia objects 命令，而该命令要求上传的文件是 ndjson 格式，但默认情况下，Hugo 不会生成 ndjson 格</description>
+    </item>
+    <item>
+      <title>上传数据到 Algolia</title>
+      <link>https://cheung40.github.io/docs/upload-data-to-algolia/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/docs/upload-data-to-algolia/</guid>
+      <description>主题推荐使用 Algolia CLI 方式将数据上传到 Algolia。 上传数据需要用到 algolia objects 命令，而该命令要求上传的文件是 ndjson 格式，但默认情况下，Hugo 不会生成 ndjson 格</description>
+    </item>
+  </channel>
+</rss>

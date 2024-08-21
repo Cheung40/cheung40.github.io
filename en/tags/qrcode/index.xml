@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qrcode on Seven Theme</title>
+    <link>https://cheung40.github.io/en/tags/qrcode/</link>
+    <description>Recent content in Qrcode on Seven Theme</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 25 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cheung40.github.io/en/tags/qrcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Add additional social links</title>
+      <link>https://cheung40.github.io/en/docs/add-social-links/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/en/docs/add-social-links/</guid>
+      <description>The theme defaults to providing social links for email, Github, X, and WeChat, but these may not be sufficient. However, you can add additional social links by overriding the hook_social_links.html file.&#xA;hook_social_links.html is a hook that you can create a file with the same name in the partials/index directory of your site to override the default implementation.&#xA;YourSite/layouts/partials/index/hook_social_links.html Regular LinksRegular links, where clicking the icon directly redirects to the link address.</description>
+    </item>
+    <item>
+      <title>essays Add additional social links</title>
+      <link>https://cheung40.github.io/en/essays/add-social-links/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/en/essays/add-social-links/</guid>
+      <description>The theme defaults to providing social links for email, Github, X, and WeChat, but these may not be sufficient. However, you can add additional social links by overriding the hook_social_links.html file.&#xA;hook_social_links.html is a hook that you can create a file with the same name in the partials/index directory of your site to override the default implementation.&#xA;YourSite/layouts/partials/index/hook_social_links.html Regular LinksRegular links, where clicking the icon directly redirects to the link address.</description>
+    </item>
+  </channel>
+</rss>

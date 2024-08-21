@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>社交链接 on Seven 主题</title>
+    <link>https://cheung40.github.io/tags/%E7%A4%BE%E4%BA%A4%E9%93%BE%E6%8E%A5/</link>
+    <description>Recent content in 社交链接 on Seven 主题</description>
+    <generator>Hugo</generator>
+    <language>zh-hans</language>
+    <lastBuildDate>Thu, 25 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cheung40.github.io/tags/%E7%A4%BE%E4%BA%A4%E9%93%BE%E6%8E%A5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>重要配置说明</title>
+      <link>https://cheung40.github.io/docs/configuation/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/docs/configuation/</guid>
+      <description>下面列出了在配置主题过程中需要配置的重要参数。 如果在使用过程中，发现了一些问题，欢迎在 Github 上提 issue，或者跟我进一步交流。 网站图标 Favi</description>
+    </item>
+    <item>
+      <title>essays重要配置说明</title>
+      <link>https://cheung40.github.io/essays/configuation/</link>
+      <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/essays/configuation/</guid>
+      <description>下面列出了在配置主题过程中需要配置的重要参数。 如果在使用过程中，发现了一些问题，欢迎在 Github 上提 issue，或者跟我进一步交流。 网站图标 Favi</description>
+    </item>
+    <item>
+      <title>essays 添加额外的社交链接</title>
+      <link>https://cheung40.github.io/essays/add-social-links/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/essays/add-social-links/</guid>
+      <description>主题默认提供了邮件、Github、X 和微信四种社交链接，但这是远远不够的，不过可以通过重写 hook_social_links.html 来添加其他的社交链接。 hook_social_links.html 是一个钩子，你可以在站点</description>
+    </item>
+    <item>
+      <title>添加额外的社交链接</title>
+      <link>https://cheung40.github.io/docs/add-social-links/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/docs/add-social-links/</guid>
+      <description>主题默认提供了邮件、Github、X 和微信四种社交链接，但这是远远不够的，不过可以通过重写 hook_social_links.html 来添加其他的社交链接。 hook_social_links.html 是一个钩子，你可以在站点</description>
+    </item>
+  </channel>
+</rss>

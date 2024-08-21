@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github on Seven Theme</title>
+    <link>https://cheung40.github.io/en/tags/github/</link>
+    <description>Recent content in Github on Seven Theme</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 25 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cheung40.github.io/en/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quickly Experience the Theme</title>
+      <link>https://cheung40.github.io/en/docs/quick-start/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/en/docs/quick-start/</guid>
+      <description>This article describes how to quickly experience the seven theme.&#xA;Prerequisites Install Hugo , with a version requirement of &amp;gt;= 0.124.0. Install Go . Install Node.js . Clone Repositorygit clone https://github.com/mrhelloboy/seven.git Install Dependenciescd seven/exampleSite hugo mod npm pack npm install Run Hugo Serverhugo server Open BrowserAccess http://localhost:1313 in your browser.</description>
+    </item>
+    <item>
+      <title>essays Quickly Experience the Theme</title>
+      <link>https://cheung40.github.io/en/essays/quick-start/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/en/essays/quick-start/</guid>
+      <description>This article describes how to quickly experience the seven theme.&#xA;Prerequisites Install Hugo , with a version requirement of &amp;gt;= 0.124.0. Install Go . Install Node.js . Clone Repositorygit clone https://github.com/mrhelloboy/seven.git Install Dependenciescd seven/exampleSite hugo mod npm pack npm install Run Hugo Serverhugo server Open BrowserAccess http://localhost:1313 in your browser.</description>
+    </item>
+  </channel>
+</rss>

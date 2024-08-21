@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Favicon on Seven 主题</title>
+    <link>https://cheung40.github.io/tags/favicon/</link>
+    <description>Recent content in Favicon on Seven 主题</description>
+    <generator>Hugo</generator>
+    <language>zh-hans</language>
+    <lastBuildDate>Thu, 25 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cheung40.github.io/tags/favicon/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>重要配置说明</title>
+      <link>https://cheung40.github.io/docs/configuation/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/docs/configuation/</guid>
+      <description>下面列出了在配置主题过程中需要配置的重要参数。 如果在使用过程中，发现了一些问题，欢迎在 Github 上提 issue，或者跟我进一步交流。 网站图标 Favi</description>
+    </item>
+    <item>
+      <title>essays重要配置说明</title>
+      <link>https://cheung40.github.io/essays/configuation/</link>
+      <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/essays/configuation/</guid>
+      <description>下面列出了在配置主题过程中需要配置的重要参数。 如果在使用过程中，发现了一些问题，欢迎在 Github 上提 issue，或者跟我进一步交流。 网站图标 Favi</description>
+    </item>
+  </channel>
+</rss>

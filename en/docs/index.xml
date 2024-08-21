@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Document on Seven Theme</title>
+    <link>https://cheung40.github.io/en/docs/</link>
+    <description>Recent content in Document on Seven Theme</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 25 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cheung40.github.io/en/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quickly Experience the Theme</title>
+      <link>https://cheung40.github.io/en/docs/quick-start/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/en/docs/quick-start/</guid>
+      <description>This article describes how to quickly experience the seven theme.&#xA;Prerequisites Install Hugo , with a version requirement of &amp;gt;= 0.124.0. Install Go . Install Node.js . Clone Repositorygit clone https://github.com/mrhelloboy/seven.git Install Dependenciescd seven/exampleSite hugo mod npm pack npm install Run Hugo Serverhugo server Open BrowserAccess http://localhost:1313 in your browser.</description>
+    </item>
+    <item>
+      <title>Important configuration instructions</title>
+      <link>https://cheung40.github.io/en/docs/configuation/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/en/docs/configuation/</guid>
+      <description>Here is a list of important parameters that need to be configured during the process of configuring the theme.&#xA;If you find some problems during the process, please feel free to raise an issue on Github or communicate with me further.&#xA;Website Icons FaviconThe theme recommends using svg as favicon, but of course traditional formats are also supported.&#xA;The configuration parameters are as follows:&#xA;[app] noFavicon = false # Whether to disable the favicon svgFavicon = &amp;#34;/favicon.</description>
+    </item>
+    <item>
+      <title>Uploading Data to Algolia Search</title>
+      <link>https://cheung40.github.io/en/docs/upload-data-to-algolia/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/en/docs/upload-data-to-algolia/</guid>
+      <description>The theme recommends using the Algolia CLI to upload data to Algolia.&#xA;The data upload requires using the algolia objects command, which expects the uploaded file to be in ndjson format. By default, Hugo doesn&amp;rsquo;t generate ndjson format data files. However, this theme supports generating ndjson format data files by default, making it convenient to use the algolia objects command to upload data to Algolia.&#xA;First, make sure you have installed the Algolia CLI.</description>
+    </item>
+    <item>
+      <title>Add additional social links</title>
+      <link>https://cheung40.github.io/en/docs/add-social-links/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/en/docs/add-social-links/</guid>
+      <description>The theme defaults to providing social links for email, Github, X, and WeChat, but these may not be sufficient. However, you can add additional social links by overriding the hook_social_links.html file.&#xA;hook_social_links.html is a hook that you can create a file with the same name in the partials/index directory of your site to override the default implementation.&#xA;YourSite/layouts/partials/index/hook_social_links.html Regular LinksRegular links, where clicking the icon directly redirects to the link address.</description>
+    </item>
+    <item>
+      <title>Install the Theme</title>
+      <link>https://cheung40.github.io/en/docs/installation/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/en/docs/installation/</guid>
+      <description>Installing the theme from scratch.&#xA;Prerequisites Download Hugo , version required &amp;gt;= 0.124.0 Download Go Download Node.js Creating a Sitehugo new site [sitename] cd [sitename] # Deleting the Themes Directory from the Site rm -rf themes Initializing Hugo Moduleshugo mod init github.com/[username]/[sitename] Importing the Theme ModuleConfigure the theme in hugo.toml&#xA;[module] [[module.imports]] path = &amp;#39;github.com/mrhelloboy/seven&amp;#39; Because the theme requires additional configuration parameters, it&amp;rsquo;s recommended to use the configuration file provided in this example to avoid errors, and then modify it as needed.</description>
+    </item>
+  </channel>
+</rss>

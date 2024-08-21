@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Twikoo on Seven Theme</title>
+    <link>https://cheung40.github.io/en/tags/twikoo/</link>
+    <description>Recent content in Twikoo on Seven Theme</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 25 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cheung40.github.io/en/tags/twikoo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Important configuration instructions</title>
+      <link>https://cheung40.github.io/en/docs/configuation/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/en/docs/configuation/</guid>
+      <description>Here is a list of important parameters that need to be configured during the process of configuring the theme.&#xA;If you find some problems during the process, please feel free to raise an issue on Github or communicate with me further.&#xA;Website Icons FaviconThe theme recommends using svg as favicon, but of course traditional formats are also supported.&#xA;The configuration parameters are as follows:&#xA;[app] noFavicon = false # Whether to disable the favicon svgFavicon = &amp;#34;/favicon.</description>
+    </item>
+    <item>
+      <title>essays Important configuration instructions</title>
+      <link>https://cheung40.github.io/en/essays/configuation/</link>
+      <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/en/essays/configuation/</guid>
+      <description>Here is a list of important parameters that need to be configured during the process of configuring the theme.&#xA;If you find some problems during the process, please feel free to raise an issue on Github or communicate with me further.&#xA;Website Icons FaviconThe theme recommends using svg as favicon, but of course traditional formats are also supported.&#xA;The configuration parameters are as follows:&#xA;[app] noFavicon = false # Whether to disable the favicon svgFavicon = &amp;#34;/favicon.</description>
+    </item>
+  </channel>
+</rss>

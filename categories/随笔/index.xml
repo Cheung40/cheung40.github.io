@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>随笔 on Seven 主题</title>
+    <link>https://cheung40.github.io/categories/%E9%9A%8F%E7%AC%94/</link>
+    <description>Recent content in 随笔 on Seven 主题</description>
+    <generator>Hugo</generator>
+    <language>zh-hans</language>
+    <lastBuildDate>Thu, 25 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cheung40.github.io/categories/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>essays快速体验主题</title>
+      <link>https://cheung40.github.io/essays/quick-start/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/essays/quick-start/</guid>
+      <description>这篇文章介绍如何快速体验 seven 主题。 前提条件 下载 Hugo , 版本要求 &amp;gt;= 0.124.0 下载 Go 下载 Node.js 克隆主题仓库git clone https://github.com/mrhelloboy/seven.git 下载依赖及初始化cd seven/exampleSite hugo mod npm pack npm install 启动服务hu</description>
+    </item>
+    <item>
+      <title>essays重要配置说明</title>
+      <link>https://cheung40.github.io/essays/configuation/</link>
+      <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/essays/configuation/</guid>
+      <description>下面列出了在配置主题过程中需要配置的重要参数。 如果在使用过程中，发现了一些问题，欢迎在 Github 上提 issue，或者跟我进一步交流。 网站图标 Favi</description>
+    </item>
+    <item>
+      <title>essays上传数据到 Algolia</title>
+      <link>https://cheung40.github.io/essays/upload-data-to-algolia/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/essays/upload-data-to-algolia/</guid>
+      <description>主题推荐使用 Algolia CLI 方式将数据上传到 Algolia。 上传数据需要用到 algolia objects 命令，而该命令要求上传的文件是 ndjson 格式，但默认情况下，Hugo 不会生成 ndjson 格</description>
+    </item>
+    <item>
+      <title>essays 添加额外的社交链接</title>
+      <link>https://cheung40.github.io/essays/add-social-links/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/essays/add-social-links/</guid>
+      <description>主题默认提供了邮件、Github、X 和微信四种社交链接，但这是远远不够的，不过可以通过重写 hook_social_links.html 来添加其他的社交链接。 hook_social_links.html 是一个钩子，你可以在站点</description>
+    </item>
+    <item>
+      <title>essays安装主题</title>
+      <link>https://cheung40.github.io/essays/installation/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://cheung40.github.io/essays/installation/</guid>
+      <description>从零开始安装主题。 前提条件 下载 Hugo , 版本要求 &amp;gt;= 0.124.0 下载 Go 下载 Node.js 创建站点hugo new site [sitename] cd [sitename] # 删除站点的 themes 目录 rm -rf themes 初始化 Hugo 模块hugo mod init github.com/[username]/[sitename] 导入主</description>
+    </item>
+  </channel>
+</rss>
