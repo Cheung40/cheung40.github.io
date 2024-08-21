@@ -6,8 +6,15 @@
     <description>Recent content in Categories on Seven Theme</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 25 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Aug 2024 23:13:12 +0800</lastBuildDate>
     <atom:link href="https://cheung40.github.io/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://cheung40.github.io/en/categories/linux/</link>
+      <pubDate>Wed, 21 Aug 2024 23:13:12 +0800</pubDate>
+      <guid>https://cheung40.github.io/en/categories/linux/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Documents</title>
       <link>https://cheung40.github.io/en/categories/documents/</link>

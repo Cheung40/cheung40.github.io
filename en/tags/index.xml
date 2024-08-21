@@ -6,8 +6,22 @@
     <description>Recent content in Tags on Seven Theme</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 25 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Aug 2024 23:13:12 +0800</lastBuildDate>
     <atom:link href="https://cheung40.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go</title>
+      <link>https://cheung40.github.io/en/tags/go/</link>
+      <pubDate>Wed, 21 Aug 2024 23:13:12 +0800</pubDate>
+      <guid>https://cheung40.github.io/en/tags/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>https://cheung40.github.io/en/tags/linux/</link>
+      <pubDate>Wed, 21 Aug 2024 23:13:12 +0800</pubDate>
+      <guid>https://cheung40.github.io/en/tags/linux/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Algolia</title>
       <link>https://cheung40.github.io/en/tags/algolia/</link>
@@ -146,13 +160,6 @@
       <link>https://cheung40.github.io/en/tags/waline/</link>
       <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
       <guid>https://cheung40.github.io/en/tags/waline/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Go</title>
-      <link>https://cheung40.github.io/en/tags/go/</link>
-      <pubDate>Wed, 28 Jun 2023 22:02:42 +0800</pubDate>
-      <guid>https://cheung40.github.io/en/tags/go/</guid>
       <description></description>
     </item>
     <item>

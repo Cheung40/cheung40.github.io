@@ -132,6 +132,110 @@
                 href="https://cheung40.github.io/en/docs/installation/"
                 />
   </url><url>
+    <loc>https://cheung40.github.io/en/categories/</loc>
+    <lastmod>2024-08-21T23:13:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hans"
+                href="https://cheung40.github.io/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cheung40.github.io/en/categories/"
+                />
+  </url><url>
+    <loc>https://cheung40.github.io/en/tags/go/</loc>
+    <lastmod>2024-08-21T23:13:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hans"
+                href="https://cheung40.github.io/tags/go/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cheung40.github.io/en/tags/go/"
+                />
+  </url><url>
+    <loc>https://cheung40.github.io/en/tags/linux/</loc>
+    <lastmod>2024-08-21T23:13:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hans"
+                href="https://cheung40.github.io/tags/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cheung40.github.io/en/tags/linux/"
+                />
+  </url><url>
+    <loc>https://cheung40.github.io/en/categories/linux/</loc>
+    <lastmod>2024-08-21T23:13:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hans"
+                href="https://cheung40.github.io/categories/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cheung40.github.io/en/categories/linux/"
+                />
+  </url><url>
+    <loc>https://cheung40.github.io/en/posts/linux/my-first-post/</loc>
+    <lastmod>2024-08-21T23:13:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hans"
+                href="https://cheung40.github.io/posts/linux/my-first-post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cheung40.github.io/en/posts/linux/my-first-post/"
+                />
+  </url><url>
+    <loc>https://cheung40.github.io/en/posts/</loc>
+    <lastmod>2024-08-21T23:13:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hans"
+                href="https://cheung40.github.io/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cheung40.github.io/en/posts/"
+                />
+  </url><url>
+    <loc>https://cheung40.github.io/en/</loc>
+    <lastmod>2024-08-21T23:13:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hans"
+                href="https://cheung40.github.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cheung40.github.io/en/"
+                />
+  </url><url>
+    <loc>https://cheung40.github.io/en/tags/</loc>
+    <lastmod>2024-08-21T23:13:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hans"
+                href="https://cheung40.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cheung40.github.io/en/tags/"
+                />
+  </url><url>
     <loc>https://cheung40.github.io/en/docs/</loc>
     <lastmod>2024-04-27T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -158,19 +262,6 @@
                 href="https://cheung40.github.io/en/essays/"
                 />
   </url><url>
-    <loc>https://cheung40.github.io/en/</loc>
-    <lastmod>2024-04-27T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hans"
-                href="https://cheung40.github.io/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cheung40.github.io/en/"
-                />
-  </url><url>
     <loc>https://cheung40.github.io/en/tags/algolia/</loc>
     <lastmod>2024-04-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -189,19 +280,6 @@
   </url><url>
     <loc>https://cheung40.github.io/en/tags/background/</loc>
     <lastmod>2024-04-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cheung40.github.io/en/categories/</loc>
-    <lastmod>2024-04-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hans"
-                href="https://cheung40.github.io/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cheung40.github.io/en/categories/"
-                />
   </url><url>
     <loc>https://cheung40.github.io/en/tags/comment/</loc>
     <lastmod>2024-04-25T00:00:00+00:00</lastmod>
@@ -314,19 +392,6 @@
     <loc>https://cheung40.github.io/en/tags/society-link/</loc>
     <lastmod>2024-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cheung40.github.io/en/tags/</loc>
-    <lastmod>2024-04-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hans"
-                href="https://cheung40.github.io/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cheung40.github.io/en/tags/"
-                />
-  </url><url>
     <loc>https://cheung40.github.io/en/tags/twikoo/</loc>
     <lastmod>2024-04-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -366,19 +431,6 @@
                 href="https://cheung40.github.io/en/posts/2023-06-28-getting-started-with-multi-module-workspaces/"
                 />
   </url><url>
-    <loc>https://cheung40.github.io/en/tags/go/</loc>
-    <lastmod>2023-06-28T22:02:42+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hans"
-                href="https://cheung40.github.io/tags/go/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cheung40.github.io/en/tags/go/"
-                />
-  </url><url>
     <loc>https://cheung40.github.io/en/categories/go-tutorial/</loc>
     <lastmod>2023-06-28T22:02:42+08:00</lastmod>
     <xhtml:link
@@ -416,19 +468,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://cheung40.github.io/en/tags/multi-module/"
-                />
-  </url><url>
-    <loc>https://cheung40.github.io/en/posts/</loc>
-    <lastmod>2023-06-28T22:02:42+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hans"
-                href="https://cheung40.github.io/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cheung40.github.io/en/posts/"
                 />
   </url><url>
     <loc>https://cheung40.github.io/en/archive/</loc>

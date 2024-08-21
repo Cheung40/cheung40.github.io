@@ -6,8 +6,15 @@
     <description>Recent content in Go on Seven 主题</description>
     <generator>Hugo</generator>
     <language>zh-hans</language>
-    <lastBuildDate>Wed, 28 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Aug 2024 23:13:02 +0800</lastBuildDate>
     <atom:link href="https://cheung40.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我的第一篇博文</title>
+      <link>https://cheung40.github.io/posts/linux/my-first-post/</link>
+      <pubDate>Wed, 21 Aug 2024 23:13:02 +0800</pubDate>
+      <guid>https://cheung40.github.io/posts/linux/my-first-post/</guid>
+      <description>详细描述如何在Linux下搭建GO环境</description>
+    </item>
     <item>
       <title>Getting Started With Multi Module Workspaces</title>
       <link>https://cheung40.github.io/posts/2023-06-28-getting-started-with-multi-module-workspaces/</link>
