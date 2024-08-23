@@ -210,19 +210,6 @@
                 href="https://cheung40.github.io/en/posts/"
                 />
   </url><url>
-    <loc>https://cheung40.github.io/en/</loc>
-    <lastmod>2024-08-21T23:13:12+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hans"
-                href="https://cheung40.github.io/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cheung40.github.io/en/"
-                />
-  </url><url>
     <loc>https://cheung40.github.io/en/tags/</loc>
     <lastmod>2024-08-21T23:13:12+08:00</lastmod>
     <xhtml:link
@@ -234,6 +221,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://cheung40.github.io/en/tags/"
+                />
+  </url><url>
+    <loc>https://cheung40.github.io/en/</loc>
+    <lastmod>2024-08-21T23:13:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hans"
+                href="https://cheung40.github.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cheung40.github.io/en/"
                 />
   </url><url>
     <loc>https://cheung40.github.io/en/docs/</loc>
