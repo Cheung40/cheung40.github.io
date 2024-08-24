@@ -4,7 +4,7 @@
   var api_key = "4a1095e4b8c96d2baee42d4c64b16afa";
   var highlight = "title";
   var index = "hugo_theme_seven_demo";
-  var placeholder = "Search for content";
+  var placeholder = "\u8BF7\u641C\u7D22\u5185\u5BB9";
   var snippet = "description";
 
   // <stdin>
